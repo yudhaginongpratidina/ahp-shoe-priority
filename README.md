@@ -31,7 +31,7 @@ git commit -m 'pesan commit'
 git push origin branch_name
 ```
 
-## RULES
+## RULES COLABORATION
 
 * Dilarang menambahkan fitur baru secara langsung ke branch master
 * Penambahan fitur baru di lakukan di branch lain (membuat branch baru)
