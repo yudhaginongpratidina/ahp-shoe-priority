@@ -25,6 +25,7 @@ import { FaRegCircle } from "react-icons/fa";
 
 export default function SidebarMenuComponent(props) {
 
+    // eslint-disable-next-line react/prop-types
     const { title, items } = props;
 
     // ===========================================================================
