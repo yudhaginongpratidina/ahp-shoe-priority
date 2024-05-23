@@ -3,14 +3,22 @@
 // ----------------------------------------------------------------------------
 // - id         = string
 // - name       = string
+// - value      = string
+// - onChange   = function
 // ============================================================================
 
 
-// ============================================================================
+// ====================================================================================================================
 // CONTOH PENULISAN TEXT FIELD COMPONENT
-// ----------------------------------------------------------------------------
-// <TextFieldComponent id="username" name="username" />
-// ============================================================================
+// -------------------------------------------------------------------------------------------------------------------
+// <TextFieldComponent 
+//      id="username" 
+//      name="username" 
+//      required={true} 
+//      value={username} 
+//      onChange={(e) => setUsername(e.target.value)} 
+// />
+// ====================================================================================================================
 
 
 import { useState } from "react";
@@ -18,7 +26,7 @@ import { useState } from "react";
 
 export default function TextFieldComponent(props) {
 
-    const { id, name } = props
+    const { id, name, value, onChange, required } = props
 
     const [focus, setFocus] = useState(false);
 
@@ -46,6 +54,9 @@ export default function TextFieldComponent(props) {
                 onFocus={handleFocus}
                 onBlur={handleBlur}
                 autoComplete="off"
+                value={value}
+                onChange={onChange}
+                required={required}
             />
         </div>
     );
