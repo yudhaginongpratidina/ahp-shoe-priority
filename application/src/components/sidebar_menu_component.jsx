@@ -25,6 +25,7 @@ import { FaRegCircle } from "react-icons/fa";
 
 export default function SidebarMenuComponent(props) {
 
+    // eslint-disable-next-line react/prop-types
     const { title, items } = props;
 
     // ===========================================================================
@@ -47,7 +48,7 @@ export default function SidebarMenuComponent(props) {
             {/* ITEMS */}
             {/* ========================================================================= */}
             <div className="px-5 py-4 flex flex-col gap-2.5">
-                {items.map(item => (
+                {items?.map(item => (
                     <Link to={item.path} key={item.id} className="flex items-center gap-2.5">
                         <FaRegCircle className="text-blue-500 text-md" />
                         <h1 className="text-sm">{item.name}</h1>

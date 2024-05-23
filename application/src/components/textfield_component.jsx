@@ -13,7 +13,7 @@
 // ============================================================================
 
 
-import React, { useState } from "react";
+import { useState } from "react";
 
 
 export default function TextFieldComponent(props) {
@@ -34,10 +34,7 @@ export default function TextFieldComponent(props) {
 
     return (
         <div className="relative flex flex-col gap-2 mb-5">
-            <label
-                htmlFor={id}
-                className={`absolute transition-all left-2 duration-500 ${focus ? "-top-2.5  text-xs text-gray-600" : "top-2 capitalize text-gray-500"}`}
-            >
+            <label htmlFor={id} className={`absolute transition-all left-2 duration-500 ${focus ? "-top-2.5  text-xs text-gray-600" : "top-2 capitalize text-gray-500"}`}>
                 {name}
             </label>
             <input
