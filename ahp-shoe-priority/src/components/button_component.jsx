@@ -16,11 +16,12 @@
 
 export default function ButtonComponent(props){
 
-    const { type, name, btnType } = props
+    const { type, name, btnType, onClick } = props
 
     return (
         <button 
-            type={type || "button"} 
+            type={type || "button"}
+            onClick={onClick} 
             className={`
 
                 ${btnType == "auth"     ? "bg-slate-500 hover:bg-slate-600 text-white": ""} 
@@ -28,6 +29,7 @@ export default function ButtonComponent(props){
                 ${btnType == "edit"     ? "bg-yellow-500 hover:bg-yellow-600 text-white": ""} 
                 ${btnType == "update"   ? "bg-green-500 hover:bg-green-600 text-white": ""} 
                 ${btnType == "delete"   ? "bg-red-500 hover:bg-red-600 text-white": ""} 
+                ${btnType == "cancel"   ? "bg-red-500 hover:bg-red-600 text-white": ""} 
 
                 w-full p-2 bg-blue-500 text-white`
             }

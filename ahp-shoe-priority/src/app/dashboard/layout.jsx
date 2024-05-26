@@ -12,6 +12,7 @@ import { IoLogOut } from "react-icons/io5";
 // =======================================================================================
 import { useState } from "react";
 import { useRouter } from 'next/navigation'
+import Link from "next/link";
 
 
 
@@ -42,28 +43,14 @@ export default function DashboardLayout({ children }) {
     // MENU SIDE BAR (ASIDE)
     // =======================================================================================
     const menu_master = [
-        { id: 1, name: "Intensitas Kepentingan", path: "/" },
-        { id: 2, name: "Matriks Size", path: "/" },
+        { id: 1, name: "Intensitas Kepentingan", path: "/dashboard/intensitas-kepentingan" },
+        { id: 2, name: "Random Consistency Index", path: "/dashboard/random-index" },
     ]
     
-    const menu_kriteria = [
-        { id: 1, name: "Kriteria Target", path: "/" },
-        { id: 2, name: "Kriteria Merk", path: "/" },
-        { id: 3, name: "Kriteria Keawetan", path: "/" },
-        { id: 4, name: "Kriteria Harga", path: "/" },
-        { id: 5, name: "Kriteria Warna", path: "/" },
+    const menu_bobot = [
+        { id: 1, name: "Bobot Kriteria", path: "/dashboard/bobot-kriteria" },
     ]
 
-    const menu_alternative = [
-    
-        { id: 1, name: "Daftar Alternative", path: "/" },
-        { id: 2, name: "Matriks Nilai", path: "/" },
-        { id: 3, name: "Rangking", path: "/" },
-    ]
-    
-    const menu_sistem = [
-        { id: 1, name: "Log Out", path: "/" },
-    ]
 
     return (
         <div className="w-full min-h-screen flex bg-white">
@@ -102,7 +89,7 @@ export default function DashboardLayout({ children }) {
                     <div className="w-full px-2 py-[7px] flex items-center justify-between gap-2.5 bg-orange-500">
                         <div className="flex items-center gap-2">
                             <GiConverseShoe className="text-white text-3xl" />
-                            <h1 className="text-lg font-bold">SHOE PRIORITY</h1>
+                            <Link href="/dashboard" className="text-lg font-bold">SHOE PRIORITY</Link>
                         </div>
                         <button onClick={toggleSidebar}>
                             <GiHamburgerMenu className="text-white text-2xl" />
@@ -110,9 +97,7 @@ export default function DashboardLayout({ children }) {
                     </div>
 
                     <SidebarMenuComponent title="Master" items={menu_master} />
-                    <SidebarMenuComponent title="Kriteria" items={menu_kriteria} />
-                    <SidebarMenuComponent title="Alternative" items={menu_alternative} />
-                    <SidebarMenuComponent title="Sistem" items={menu_sistem} />
+                    <SidebarMenuComponent title="Bobot" items={menu_bobot} />
                 </div>
             </div>
 
@@ -121,7 +106,7 @@ export default function DashboardLayout({ children }) {
             {/* MAIN */}
             {/* ============================================================================= */}
             <div className="w-full">
-                <div className="w-full h-[54px]"></div>
+                <div className="w-full h-[64px]"></div>
                 <div className={`px-5 ${showSidebar ? "ml-64" : "ml-0"}`}>
                     {children}
                 </div>

@@ -24,3 +24,14 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
 }
+
+// --------------------------------------------------
+// TODO : ADD KRITERIA MODEL / TABLE
+// --------------------------------------------------
+model Kriteria {
+  id        String  @id @default(cuid())
+  name      String  @db.VarChar(255)
+  bobot     Int     @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+}
