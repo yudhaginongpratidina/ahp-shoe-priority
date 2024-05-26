@@ -18,3 +18,9 @@
 | POST                 | /api/auth            | Login user              |
 | POST                 | /api/users           | Register user           |
 
+## INTEREST & RANDOM INDEX
+
+| Method               | Path                 | Description             |
+|----------------------|----------------------|-------------------------|
+| GET                  | /api/interest        | Intensitas Kepentingan  |              |
+| POST                 | /api/random-index    | Random Index            |
