@@ -1,19 +1,30 @@
 "use client"
 
-
+// -------------------------------------------------------------------
+// TODO : IMPORT COMPONENT
+// -------------------------------------------------------------------
 import ButtonComponent from "@/components/button_component";
 import TextFieldComponent from "@/components/textfield_component";
 
+// -------------------------------------------------------------------
+// TODO : IMPORT LIBRARY
+// -------------------------------------------------------------------
 import { useState } from "react";
 
 export default function Page() {
-
+    
+    // -------------------------------------------------------------------
+    // TODO : MEMBUAT STATE
+    // -------------------------------------------------------------------
     const [formTitle, setFormTitle] = useState("Sign In")
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [message, setMessage] = useState("")
-
-
+    
+    
+    // -------------------------------------------------------------------
+    // TODO : FUNGSI UNTUK MENGUBAH NAMA FORM
+    // -------------------------------------------------------------------
     const handleUpdateFormTiitle = () => {
         if (formTitle === "Sign In") {
             setFormTitle("Sign Up")
@@ -21,15 +32,59 @@ export default function Page() {
             setFormTitle("Sign In")
         }
     }
-
-
+    
+    
+    // -------------------------------------------------------------------
+    // TODO : FUNGSI UNTUK MELAKUKAN LOGIN
+    // -------------------------------------------------------------------
     const handleLogin = async (e) => {
         e.preventDefault()
+
+        try {
+            const response = await fetch("/api/auth", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    username: username,
+                    password: password
+                })
+            })
+
+            const data = await response.json()
+            setMessage(data.message)
+
+        } catch (error) {
+            console.log(error)
+        }
     }
 
-
+    // -------------------------------------------------------------------
+    // TODO : FUNGSI UNTUK MELAKUKAN REGISTER
+    // -------------------------------------------------------------------
     const handleSignUp = async (e) => {
         e.preventDefault()
+
+        try {
+            const response = await fetch("/api/users", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    username: username,
+                    password: password
+                })
+            })
+
+            const data = await response.json()
+            setMessage(data.message)
+
+            handleUpdateFormTiitle()
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     return (
