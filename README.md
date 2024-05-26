@@ -31,17 +31,6 @@ git commit -m 'pesan commit'
 git push origin branch_name
 ```
 
-## PROJECT STRUCTURE APPLICATION
-
-| **Nama**          | **Deskripsi**                                |
-|-------------------|----------------------------------------------|
-| Folder Components | Berisi kumpulan component                    |
-| Folder Assets     | Berisi file gambar, vidio, dsb               |
-| Folder Layouts    | Berisi kumpulan layout untuk halaman         |
-| Folder Screens    | Semua yang tampil di front end diatur disini |
-| File Main.jsx     | Entry Point / End Point / Routing Aplikasi   |
-|                   |                                              |
-
 
 ## RULES COLABORATION
 
@@ -55,3 +44,4 @@ git push origin branch_name
 * [Vite](https://vitejs.dev/)
 * [React Icons](https://react-icons.github.io/react-icons/)
 * [Tailwind CSS](https://tailwindcss.com/docs/installation)
+* [NextJs](https://nextjs.org/docs)
