@@ -49,6 +49,16 @@ export default function DashboardLayout({ children }) {
     
     const menu_bobot = [
         { id: 1, name: "Bobot Kriteria", path: "/dashboard/bobot-kriteria" },
+        { id: 2, name: "Bobot Merk (Proses Develop", path: "/dashboard/bobot-kriteria" },
+        { id: 3, name: "Bobot Harga (Proses Develop", path: "/dashboard/bobot-kriteria" },
+        { id: 4, name: "Bobot Keawetan (Proses Develop", path: "/dashboard/bobot-kriteria" },
+    ]
+
+    const menu_ahp = [
+        { id: 1, name: "AHP Bobot Kriteria", path: "/dashboard/ahp-bobot-kriteria" },
+        { id: 2, name: "AHP Bobot Merk", path: "/dashboard/ahp-bobot-kriteria" },
+        { id: 3, name: "AHP Bobot Harga", path: "/dashboard/ahp-bobot-kriteria" },
+        { id: 4, name: "AHP Bobot Keawetan", path: "/dashboard/ahp-bobot-kriteria" },
     ]
 
 
@@ -98,6 +108,7 @@ export default function DashboardLayout({ children }) {
 
                     <SidebarMenuComponent title="Master" items={menu_master} />
                     <SidebarMenuComponent title="Bobot" items={menu_bobot} />
+                    <SidebarMenuComponent title="Data AHP" items={menu_ahp} />
                 </div>
             </div>
 

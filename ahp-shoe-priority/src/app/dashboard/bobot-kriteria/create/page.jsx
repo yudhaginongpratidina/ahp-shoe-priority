@@ -11,7 +11,6 @@ import { useRouter } from 'next/navigation'
 
 export default function CreateKriteria(props) {
 
-    const { onClick, showFormCreateKriteria } = props
     const router = useRouter();
 
 
@@ -60,7 +59,11 @@ export default function CreateKriteria(props) {
 
             const data = await response.json();
             setMessage(data.message);
-            router.push("/dashboard");
+
+            setTimeout(() => {
+                router.push("/dashboard/bobot-kriteria");
+            }, 1000);
+
         } catch (error) {
             console.log(error);
         }
@@ -71,10 +74,22 @@ export default function CreateKriteria(props) {
             {/* ============================================================================= */}
             {/* FORM TAMBAH DATA KRITERIA */}
             {/* ============================================================================= */}
-            <div className={`${showFormCreateKriteria ? "block" : "hidden"} w-full max-w-screen-sm p-5 fixed z-40 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 shadow-md drop-shadow-sm border`}>
+            <div className={` w-full max-w-screen-sm p-5 fixed z-40 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 shadow-md drop-shadow-sm border`}>
                 <div className="mb-5">
                     <h1>Tambah Bobot Kriteria Baru</h1>
                 </div>
+
+                {/* ============================================================================= */}
+                {/* PESAN                                                                         */}
+                {/* ============================================================================= */}
+                {message && (
+                    <div className="mb-5 p-2 w-full bg-green-500">
+                        <p className="text-sm text-white">{message}</p>
+                    </div>
+                )}
+
+                
+
                 <form onSubmit={handleCreateKriteria}>
                     {/* ============================================================================= */}
                     {/* NAMA KRITERIA */}
@@ -99,7 +114,6 @@ export default function CreateKriteria(props) {
 
                     <div className="flex items-center justify-center gap-5">
                         <ButtonComponent name="Tambah" type="submit" btnType="create" />
-                        <ButtonComponent onClick={onClick} name="Batal" type="button" btnType="cancel" />
                     </div>
                 </form>
             </div>
