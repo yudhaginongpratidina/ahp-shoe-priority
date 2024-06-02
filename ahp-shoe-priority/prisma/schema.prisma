@@ -41,3 +41,24 @@ model HasilBobotKriteria {
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @default(now())
 }
+
+
+// --------------------------------------------------
+// TODO : ADD MERK MODEL / TABLE
+// --------------------------------------------------
+model Merk {
+  id        String  @id @default(cuid())
+  name      String  @db.VarChar(255)
+  bobot     Int     @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+}
+
+model HasilBobotMerk {
+  id          String    @id @default(cuid())
+  merk    String    @db.VarChar(255)
+  prioritas   Decimal   @default(0)
+  bobot_akhir Decimal   @default(0)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @default(now())
+}
