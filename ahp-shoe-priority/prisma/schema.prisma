@@ -62,3 +62,24 @@ model HasilBobotMerk {
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @default(now())
 }
+
+
+// --------------------------------------------------
+// TODO : ADD MERK MODEL / TABLE
+// --------------------------------------------------
+model Harga {
+  id        String  @id @default(cuid())
+  name      String  @db.VarChar(255)
+  bobot     Int     @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+}
+
+model HasilBobotHarga {
+  id          String    @id @default(cuid())
+  harga    String    @db.VarChar(255)
+  prioritas   Decimal   @default(0)
+  bobot_akhir Decimal   @default(0)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @default(now())
+}
