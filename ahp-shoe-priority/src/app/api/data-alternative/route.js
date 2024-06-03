@@ -5,6 +5,7 @@ export async function GET(req) {
     try {
         const { searchParams } = new URL(req.url);
         const id = searchParams.get("id");
+        const totalBobotAlternative = searchParams.get("totalBobot");
 
 
         const hasil_bobot_kriteria = await prisma.hasilBobotKriteria.findMany();
@@ -16,6 +17,26 @@ export async function GET(req) {
         if (id) {
             const reponse = await prisma.dataAlternative.findMany({
                 where: { id: id }
+            });
+
+            if (reponse.length == 0) {
+                return res.json({
+                    status: 200,
+                    message: "Tidak ada data merk",
+                    data: reponse
+                });
+            } else {
+                return res.json({
+                    status: 200,
+                    message: "Success",
+                    data: reponse
+                });
+            }
+        }
+
+        if (totalBobotAlternative) {
+            const reponse = await prisma.dataAlternative.findMany({
+                where: { totalBobot: totalBobotAlternative }
             });
 
             if (reponse.length == 0) {
