@@ -61,6 +61,10 @@ export default function DashboardLayout({ children }) {
         { id: 4, name: "AHP Bobot Tujuan", path: "/dashboard/ahp-bobot-tujuan" },
     ]
 
+    const menu_alternative = [
+        { id: 1, name: "Data Alternative", path: "/dashboard/data-alternative" },
+    ]
+
 
     return (
         <div className="w-full min-h-screen flex bg-white">
@@ -109,6 +113,7 @@ export default function DashboardLayout({ children }) {
                     <SidebarMenuComponent title="Master" items={menu_master} />
                     <SidebarMenuComponent title="Bobot" items={menu_bobot} />
                     <SidebarMenuComponent title="Data AHP" items={menu_ahp} />
+                    <SidebarMenuComponent title="Data Alternative" items={menu_alternative} />
                 </div>
             </div>
 

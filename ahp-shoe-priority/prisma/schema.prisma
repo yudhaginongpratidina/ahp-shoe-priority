@@ -11,9 +11,9 @@ datasource db {
 // TODO : ADD USER MODEL / TABLE
 // --------------------------------------------------
 model User {
-  id        String  @id @default(cuid())
-  username  String  @db.VarChar(255)
-  password  String  @db.VarChar(255)
+  id       String @id @default(cuid())
+  username String @db.VarChar(255)
+  password String @db.VarChar(255)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
@@ -23,9 +23,9 @@ model User {
 // TODO : ADD KRITERIA MODEL / TABLE
 // --------------------------------------------------
 model Kriteria {
-  id        String  @id @default(cuid())
-  name      String  @db.VarChar(255)
-  bobot     Int     @default(0)
+  id        String   @id @default(cuid())
+  name      String   @db.VarChar(255)
+  bobot     Int      @default(0)
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
 }
@@ -34,74 +34,84 @@ model Kriteria {
 // TODO : ADD TABEL HASIL PERHITUNGAN BOBOT KRITERIA
 // --------------------------------------------------
 model HasilBobotKriteria {
-  id          String    @id @default(cuid())
-  kriteria    String    @db.VarChar(255)
-  prioritas   Decimal   @default(0)
-  bobot_akhir Decimal   @default(0)
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @default(now())
+  id          String   @id @default(cuid())
+  kriteria    String   @db.VarChar(255)
+  prioritas   Decimal  @default(0)
+  bobot_akhir Decimal  @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now())
 }
-
 
 // --------------------------------------------------
 // TODO : ADD MERK MODEL / TABLE
 // --------------------------------------------------
 model Merk {
-  id        String  @id @default(cuid())
-  name      String  @db.VarChar(255)
-  bobot     Int     @default(0)
+  id        String   @id @default(cuid())
+  name      String   @db.VarChar(255)
+  bobot     Int      @default(0)
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
 }
 
 model HasilBobotMerk {
-  id          String    @id @default(cuid())
-  merk    String    @db.VarChar(255)
-  prioritas   Decimal   @default(0)
-  bobot_akhir Decimal   @default(0)
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @default(now())
+  id          String   @id @default(cuid())
+  merk        String   @db.VarChar(255)
+  prioritas   Decimal  @default(0)
+  bobot_akhir Decimal  @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now())
 }
-
 
 // --------------------------------------------------
 // TODO : ADD HARGA MODEL / TABLE
 // --------------------------------------------------
 model Harga {
-  id        String  @id @default(cuid())
-  name      String  @db.VarChar(255)
-  bobot     Int     @default(0)
+  id        String   @id @default(cuid())
+  name      String   @db.VarChar(255)
+  bobot     Int      @default(0)
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
 }
 
 model HasilBobotHarga {
-  id          String    @id @default(cuid())
-  harga    String    @db.VarChar(255)
-  prioritas   Decimal   @default(0)
-  bobot_akhir Decimal   @default(0)
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @default(now())
+  id          String   @id @default(cuid())
+  harga       String   @db.VarChar(255)
+  prioritas   Decimal  @default(0)
+  bobot_akhir Decimal  @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now())
 }
-
-
 
 // --------------------------------------------------
 // TODO : ADD TUJUAN MODEL / TABLE
 // --------------------------------------------------
 model Tujuan {
-  id        String  @id @default(cuid())
-  name      String  @db.VarChar(255)
-  bobot     Int     @default(0)
+  id        String   @id @default(cuid())
+  name      String   @db.VarChar(255)
+  bobot     Int      @default(0)
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
 }
 
 model HasilBobotTujuan {
-  id          String    @id @default(cuid())
-  tujuan    String    @db.VarChar(255)
-  prioritas   Decimal   @default(0)
-  bobot_akhir Decimal   @default(0)
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @default(now())
+  id          String   @id @default(cuid())
+  tujuan      String   @db.VarChar(255)
+  prioritas   Decimal  @default(0)
+  bobot_akhir Decimal  @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now())
+}
+
+// --------------------------------------------------
+// TODO : ADD TUJUAN MODEL / TABLE
+// --------------------------------------------------
+model DataAlternative {
+  id              String   @id @default(cuid())
+  namaModel       String   @db.VarChar(255)
+  namaMerk        String   @db.VarChar(255)
+  hargaSepatu     String   @db.VarChar(255)
+  tujuanPemilihan String   @db.VarChar(255)
+  totalBobot      Decimal  @default(0)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @default(now())
 }
